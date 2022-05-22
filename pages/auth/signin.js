@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import { Loader } from '../../components';
 
 const Signin = ({ providers }) => {
   const { data: session, status } = useSession();
@@ -14,6 +15,8 @@ const Signin = ({ providers }) => {
   useEffect(() => {
     session && router.push('/');
   }, [session]);
+
+  if (session) return <Loader />;
 
   return (
     <div className="bg-black h-screen flex flex-col items-center pt-40 space-y-8">
