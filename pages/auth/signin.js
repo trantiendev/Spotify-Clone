@@ -10,8 +10,6 @@ const Signin = ({ providers }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  console.log(session, status);
-
   useEffect(() => {
     session && router.push('/');
   }, [session]);
