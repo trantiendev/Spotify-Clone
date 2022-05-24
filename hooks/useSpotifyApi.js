@@ -18,7 +18,7 @@ const useSpotifyApi = () => {
       signIn('spotify', { callbackUrl: '/' });
 
     spotifyApi.setAccessToken(session.accessToken);
-  }, [session]);
+  }, [session, session.accessToken]);
 
   return spotifyApi;
 };
